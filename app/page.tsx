@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const css = `
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -67,7 +67,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 41px;
+  font-size: 46px;
   font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.03em;
@@ -405,6 +405,7 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1.3;
+  white-space: nowrap;
 }
 
 /* PATTERN */
@@ -719,9 +720,10 @@ body {
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
-  const [pricingSubmitted, setPricingSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const heroRef = useRef<HTMLDivElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = () => {
     if (!email.trim()) {
@@ -735,13 +737,18 @@ export default function Home() {
     setSubmitted(true);
   };
 
+  const scrollToSignup = () => {
+    heroRef.current?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => emailRef.current?.focus(), 500);
+  };
+
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <div className="page">
 
         {/* HERO */}
-        <div className="hero">
+        <div className="hero" ref={heroRef}>
           <div className="hero-glow"></div>
           <div className="hero-badge">
             <span className="badge-dot"></span>Early access open
@@ -753,7 +760,7 @@ export default function Home() {
           </h1>
           <p className="hero-body">
             {
-              "You\u2019re making $300k decisions at 9am on 4 hours of sleep \u2014 and your only data point is \u201cI feel tired.\u201d"
+              "You\u2019re making $300k decisions at 9am on 4 hours of sleep, and your only data point is \u201cI feel tired.\u201d"
             }
             <br />
             <br />
@@ -767,6 +774,7 @@ export default function Home() {
           ) : (
             <>
               <input
+                ref={emailRef}
                 className={`email-input${error ? " input-error" : ""}`}
                 type="email"
                 placeholder="Your work email"
@@ -823,7 +831,7 @@ export default function Home() {
             8:47am. Board prep in 13 minutes.
           </h2>
           <p className="section-lead on-light">
-            Your sleep was 4.5 hours. You feel okay &mdash; but okay isn&apos;t
+            Your sleep was 4.5 hours. You feel okay, but okay isn&apos;t
             the same as sharp.
           </p>
 
@@ -842,7 +850,7 @@ export default function Home() {
             <div className="scenario-line">
               <div className="scenario-icon icon-amber">👤</div>
               <div className="scenario-text">
-                Senior hire decision &mdash; offer expires today.
+                Senior hire decision, offer expires today.
                 <div className="sub">
                   You&apos;ve been going back and forth for two days.
                 </div>
@@ -859,9 +867,9 @@ export default function Home() {
             <div className="focusscore-override">
               <div className="override-label">FocusScore would have said</div>
               <div className="override-text">
-                &ldquo;Defer the vendor deal. Make the hire call &mdash;
-                that&apos;s a relationship decision, not analytical. Your window
-                opens at 10:30.&rdquo;
+                &ldquo;Defer the vendor deal. Make the hire call, that&apos;s
+                a relationship decision, not analytical. Your window opens at
+                10:30.&rdquo;
               </div>
             </div>
           </div>
@@ -922,27 +930,15 @@ export default function Home() {
           <div className="metrics-row">
             <div className="metric-cell">
               <div className="metric-val amber">HIGH</div>
-              <div className="metric-lbl">
-                Risk
-                <br />
-                Bias
-              </div>
+              <div className="metric-lbl">Risk Bias</div>
             </div>
             <div className="metric-cell">
               <div className="metric-val red">-28%</div>
-              <div className="metric-lbl">
-                Recall
-                <br />
-                Today
-              </div>
+              <div className="metric-lbl">Recall Today</div>
             </div>
             <div className="metric-cell">
               <div className="metric-val green">10:30</div>
-              <div className="metric-lbl">
-                Peak
-                <br />
-                Window
-              </div>
+              <div className="metric-lbl">Peak Window</div>
             </div>
           </div>
         </div>
@@ -1122,16 +1118,12 @@ export default function Home() {
                 <span className="chk">✓</span>Apple Pay, one-tap subscription
               </li>
             </ul>
-            {pricingSubmitted ? (
-              <p className="confirmation-msg">You&apos;re on the list.</p>
-            ) : (
-              <button
-                className="price-btn"
-                onClick={() => setPricingSubmitted(true)}
-              >
-                Join the waitlist
-              </button>
-            )}
+            <button
+              className="price-btn"
+              onClick={scrollToSignup}
+            >
+              Join the waitlist
+            </button>
             <div className="price-annual">
               Annual plan: <b>$149/yr</b>, 35% saving. At launch.
             </div>
