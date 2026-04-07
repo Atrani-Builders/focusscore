@@ -695,6 +695,18 @@ body {
   line-height: 1.6;
 }
 
+.form-error {
+  font-size: 13px;
+  color: #ff453a;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: -0.1px;
+}
+
+.email-input.input-error {
+  border-color: rgba(255,69,58,0.6);
+}
+
 .confirmation-msg {
   color: rgba(255,255,255,0.65);
   font-size: 17px;
@@ -708,6 +720,20 @@ body {
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [pricingSubmitted, setPricingSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = () => {
+    if (!email.trim()) {
+      setError("Enter your work email.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("That doesn\u2019t look like a valid email.");
+      return;
+    }
+    setSubmitted(true);
+  };
 
   return (
     <>
@@ -741,13 +767,17 @@ export default function Home() {
           ) : (
             <>
               <input
-                className="email-input"
+                className={`email-input${error ? " input-error" : ""}`}
                 type="email"
                 placeholder="Your work email"
+                value={email}
+                onChange={(e) => { setEmail(e.target.value); setError(""); }}
+                onKeyDown={(e) => { if (e.key === "Enter") handleSubmit(); }}
               />
+              {error && <p className="form-error">{error}</p>}
               <button
                 className="submit-btn"
-                onClick={() => setSubmitted(true)}
+                onClick={handleSubmit}
               >
                 Get early access
               </button>
