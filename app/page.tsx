@@ -158,12 +158,6 @@ body {
 
 .stat-item:last-child { border-right: none; }
 
-.stat-icon {
-  font-size: 22px;
-  margin-bottom: 10px;
-  line-height: 1;
-}
-
 .stat-val {
   font-size: 26px;
   font-weight: 600;
@@ -805,7 +799,6 @@ export default function Home() {
         {/* STATS */}
         <div className="stats-strip">
           <div className="stat-item">
-            <div className="stat-icon">⏱</div>
             <div className="stat-val">60s</div>
             <div className="stat-lbl">
               morning
@@ -814,7 +807,6 @@ export default function Home() {
             </div>
           </div>
           <div className="stat-item">
-            <div className="stat-icon">📈</div>
             <div className="stat-val">Day 5</div>
             <div className="stat-lbl">
               patterns
@@ -823,7 +815,6 @@ export default function Home() {
             </div>
           </div>
           <div className="stat-item">
-            <div className="stat-icon">💳</div>
             <div className="stat-val">$19</div>
             <div className="stat-lbl">
               per
