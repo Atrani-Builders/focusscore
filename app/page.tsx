@@ -739,7 +739,7 @@ export default function Home() {
 
   const scrollToSignup = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setTimeout(() => emailRef.current?.focus(), 500);
+    setTimeout(() => emailRef.current?.focus({ preventScroll: true }), 600);
   };
 
   return (
