@@ -738,7 +738,7 @@ export default function Home() {
   };
 
   const scrollToSignup = () => {
-    heroRef.current?.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(() => emailRef.current?.focus(), 500);
   };
 
