@@ -67,7 +67,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 46px;
+  font-size: 41px;
   font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.03em;
@@ -721,7 +721,7 @@ export default function Home() {
             <span className="badge-dot"></span>Early access open
           </div>
           <h1>
-            Not a sleep score.
+            Not just a sleep score.
             <br />
             <span className="muted">A judgment forecast.</span>
           </h1>
