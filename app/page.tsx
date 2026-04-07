@@ -177,7 +177,7 @@ body {
 
 /* SCENARIO */
 .scenario {
-  background: #f5f5f7;
+  background: #111;
   padding: 52px 28px;
 }
 
@@ -189,7 +189,7 @@ body {
   margin-bottom: 14px;
 }
 
-.eyebrow.light { color: #6e6e73; }
+.eyebrow.light { color: rgba(255,255,255,0.3); }
 .eyebrow.dark { color: rgba(255,255,255,0.3); }
 .eyebrow.blue { color: #2997ff; }
 
@@ -201,7 +201,7 @@ body {
   margin-bottom: 10px;
 }
 
-.section-h2.on-light { color: #1d1d1f; }
+.section-h2.on-light { color: #fff; }
 .section-h2.on-dark { color: #fff; }
 
 .section-lead {
@@ -212,14 +212,14 @@ body {
   margin-bottom: 28px;
 }
 
-.section-lead.on-light { color: rgba(0,0,0,0.52); }
+.section-lead.on-light { color: rgba(255,255,255,0.52); }
 .section-lead.on-dark { color: rgba(255,255,255,0.52); }
 
 .scenario-card {
-  background: #fff;
+  background: #1c1c1e;
   border-radius: 20px;
   padding: 24px 22px;
-  box-shadow: rgba(0,0,0,0.22) 0 3px 30px;
+  border: 1px solid rgba(255,255,255,0.07);
 }
 
 .scenario-time {
@@ -227,7 +227,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6e6e73;
+  color: rgba(255,255,255,0.3);
   margin-bottom: 14px;
 }
 
@@ -235,7 +235,7 @@ body {
   display: flex;
   gap: 12px;
   padding: 10px 0;
-  border-bottom: 0.5px solid rgba(0,0,0,0.07);
+  border-bottom: 0.5px solid rgba(255,255,255,0.07);
   align-items: flex-start;
 }
 
@@ -259,14 +259,14 @@ body {
 
 .scenario-text {
   font-size: 14px;
-  color: #1d1d1f;
+  color: rgba(255,255,255,0.86);
   line-height: 1.5;
   letter-spacing: -0.2px;
 }
 
 .scenario-text .sub {
   font-size: 12px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(255,255,255,0.4);
   margin-top: 2px;
 }
 
@@ -289,7 +289,7 @@ body {
 
 .override-text {
   font-size: 14px;
-  color: #1d1d1f;
+  color: rgba(255,255,255,0.86);
   line-height: 1.5;
   letter-spacing: -0.2px;
   font-weight: 500;
@@ -409,15 +409,15 @@ body {
 
 /* PATTERN */
 .pattern-section {
-  background: #f5f5f7;
+  background: #111;
   padding: 52px 28px;
 }
 
 .week-card {
-  background: #fff;
+  background: #1c1c1e;
   border-radius: 20px;
   padding: 22px 20px;
-  box-shadow: rgba(0,0,0,0.08) 0 2px 16px;
+  border: 1px solid rgba(255,255,255,0.07);
   margin-bottom: 10px;
 }
 
@@ -426,7 +426,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6e6e73;
+  color: rgba(255,255,255,0.3);
   margin-bottom: 16px;
 }
 
@@ -439,7 +439,7 @@ body {
 
 .bar-day {
   font-size: 11px;
-  color: rgba(0,0,0,0.36);
+  color: rgba(255,255,255,0.36);
   width: 24px;
   text-align: right;
   flex-shrink: 0;
@@ -450,7 +450,7 @@ body {
 .bar-track {
   flex: 1;
   height: 7px;
-  background: rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.08);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -473,9 +473,9 @@ body {
   letter-spacing: -0.01em;
 }
 
-.bar-pct.h { color: #1d8348; }
-.bar-pct.m { color: #b7770d; }
-.bar-pct.l { color: #c0392b; }
+.bar-pct.h { color: #30d158; }
+.bar-pct.m { color: #ff9f0a; }
+.bar-pct.l { color: #ff453a; }
 
 .insight-card {
   background: rgba(255,159,10,0.06);
@@ -496,14 +496,14 @@ body {
 .insight-title {
   font-size: 13px;
   font-weight: 600;
-  color: #b7770d;
+  color: #ff9f0a;
   margin-bottom: 4px;
   letter-spacing: -0.01em;
 }
 
 .insight-body {
   font-size: 13px;
-  color: rgba(0,0,0,0.52);
+  color: rgba(255,255,255,0.52);
   line-height: 1.5;
   letter-spacing: -0.1px;
 }
@@ -561,7 +561,7 @@ body {
 
 /* PRICING */
 .pricing-section {
-  background: #f5f5f7;
+  background: #111;
   padding: 52px 28px;
   text-align: center;
 }
@@ -667,7 +667,7 @@ body {
 .pricing-note {
   margin-top: 16px;
   font-size: 12px;
-  color: rgba(0,0,0,0.38);
+  color: rgba(255,255,255,0.28);
   line-height: 1.55;
   letter-spacing: -0.1px;
 }
