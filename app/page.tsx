@@ -7,30 +7,15 @@ const css = `
 
 body {
   font-family: 'SF Pro Display', 'SF Pro Text', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #c8c8cc;
-  display: flex;
-  justify-content: center;
+  background: #000;
   min-height: 100vh;
-  padding: 48px 16px;
 }
 
-.phone {
-  width: 390px;
-  background: #000;
-  border-radius: 52px;
-  overflow: hidden;
-  box-shadow: 0 48px 96px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08), 0 0 0 12px #1a1a1a, 0 0 0 13px rgba(255,255,255,0.06);
-  position: relative;
-}
-
-.notch {
-  width: 126px;
-  height: 36px;
-  background: #000;
-  border-radius: 0 0 24px 24px;
+.page {
+  width: 100%;
+  max-width: 480px;
   margin: 0 auto;
   position: relative;
-  z-index: 10;
 }
 
 /* HERO */
@@ -727,8 +712,7 @@ export default function Home() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: css }} />
-      <div className="phone">
-        <div className="notch"></div>
+      <div className="page">
 
         {/* HERO */}
         <div className="hero">
